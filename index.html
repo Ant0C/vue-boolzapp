@@ -16,9 +16,11 @@
             <div class="col-4 window-contact px-0">
                 <div class="profile_contact bg-body-secondary px-0">
                     <div class="row p-2 align-items-center">
-                        <div class="col-lg-2 flex-grow-1 text-start">
+                        <div class="col-lg-2">
                             <img src="https://picsum.photos/id/237/200/300" alt="" class="img-profile">
-                            Sono io
+                        </div>
+                        <div class="col-lg-1 flex-grow-1 text-start">
+                            <p>Il grande Lebowski</p>
                         </div>
                         <div class="col-lg-1">
                             <i class="fa-solid fa-circle-notch"></i>
@@ -33,8 +35,8 @@
                 </div>
                 <div class="alert_contact px-0">
                     <div class="row p-2 align-items-center justify-content-center">
-                        <div class="col-lg-2 circle_icon_bell">
-                            <i class="fa-solid fa-bell-slash icon_bell"></i>
+                        <div class="col-lg-2 icon_bell" style="width: 50px;">
+                            <i class="fa-solid fa-bell-slash"></i>
                         </div>
                         <div class="col-lg-10 text-start">
                             <p class="mb-0">Ricevi notifiche di nuovi messaggi</p>
@@ -53,10 +55,10 @@
                 <div class="list_contact px-0">
                     <div class="row p-2 align-items-center">
                         <div class="col-lg-2 text-start">
-                            <img src="./img/photo.jpg" alt="" class="img-profile">
+                            <img src="https://picsum.photos/id/237/200/300" alt="" class="img-profile">
                         </div>
                         <div class="col-lg-8 text-start">
-                            <p class="mb-0">Sei tu</p>
+                            <p class="mb-0">Il grande Lebowski</p>
                             <p class="mb-0">Ultimo messaggio inviato</p>
                         </div>
 
@@ -64,6 +66,7 @@
                             12:00
                         </div>
                     </div>
+
                     <div v-for="contact in contacts" class="row p-2 align-items-center">
                         <div class="col-lg-2 text-start">
                             <img v-bind:src="contact.avatar" class="img-profile">
@@ -81,9 +84,12 @@
             <div class="col-8 window-chat px-0">
                 <div class="profile_contact bg-body-secondary px-0">
                     <div class="row p-2 align-items-center">
-                        <div class="col-lg-2 flex-grow-1 text-start">
+                        <div class="col-lg-1">
                             <img src="https://picsum.photos/id/237/200/300" alt="" class="img-profile">
-                            Sono io
+                        </div>
+                        <div class="col-lg-1 flex-grow-1 text-start">
+                            <p class="mb-0">Nome che cambierà</p>
+                            <p class="mb-0">messaggio che cambierà</p>
                         </div>
                         <div class="col-lg-1">
                             <i class="fa-solid fa-magnifying-glass"></i>
