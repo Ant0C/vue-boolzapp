@@ -6,7 +6,7 @@ const { createApp } = Vue
         contacts: [
             {
             name: 'Michele',
-            avatar: './img/photo.jpg',
+            avatar: './img/photo1.jpg',
             visible: true,
             messages: [
             {
@@ -28,7 +28,7 @@ const { createApp } = Vue
             },
             {
             name: 'Fabio',
-            avatar: './img/photo.jpg',
+            avatar: './img/photo2.jpg',
             visible: true,
             messages: [
             {
@@ -50,7 +50,7 @@ const { createApp } = Vue
             },
             {
             name: 'Samuele',
-            avatar: './img/photo.jpg',
+            avatar: './img/photo3.jpg',
             visible: true,
             messages: [
             {
@@ -72,7 +72,7 @@ const { createApp } = Vue
             },
             {
             name: 'Alessandro B.',
-            avatar: './img/photo.jpg',
+            avatar: './img/photo4.jpg',
             visible: true,
             messages: [
             {
@@ -89,7 +89,7 @@ const { createApp } = Vue
             },
             {
             name: 'Alessandro L.',
-            avatar: './img/photo.jpg',
+            avatar: './img/photo5.jpg',
             visible: true,
             messages: [
             {
@@ -106,7 +106,7 @@ const { createApp } = Vue
             },
             {
             name: 'Claudia',
-            avatar: './img/photo.jpg',
+            avatar: './img/photo6.jpg',
             visible: true,
             messages: [
             {
@@ -128,7 +128,7 @@ const { createApp } = Vue
             },
             {
             name: 'Federico',
-            avatar: './img/photo.jpg',
+            avatar: './img/photo7.jpg',
             visible: true,
             messages: [
             {
@@ -145,7 +145,7 @@ const { createApp } = Vue
             },
             {
             name: 'Davide',
-            avatar: './img/photo.jpg',
+            avatar: './img/photo1.jpg',
             visible: true,
             messages: [
             {
@@ -165,7 +165,14 @@ const { createApp } = Vue
             }
             ],
             }
-            ]
+            ],
+        currentChat: 0,
+      }
+    },
+    methods: {
+      setChat: function(currentChat){
+        this.currentChat = currentChat
       }
     }
+
   }).mount('#app')

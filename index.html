@@ -59,7 +59,7 @@
                         </div>
                         <div class="col-lg-8 text-start">
                             <p class="mb-0">Il grande Lebowski</p>
-                            <p class="mb-0">Ultimo messaggio inviato</p>
+                            <p class="mb-0 info_message">Ultimo messaggio inviato</p>
                         </div>
 
                         <div class="col-lg-2">
@@ -67,7 +67,7 @@
                         </div>
                     </div>
 
-                    <div v-for="contact in contacts" class="row p-2 align-items-center">
+                    <div v-for="(contact,i) in contacts" @click="setChat(i)" class="row p-2 align-items-center">
                         <div class="col-lg-2 text-start">
                             <img v-bind:src="contact.avatar" class="img-profile">
                         </div>
@@ -85,11 +85,11 @@
                 <div class="profile_contact bg-body-secondary px-0">
                     <div class="row p-2 align-items-center">
                         <div class="col-lg-1">
-                            <img src="https://picsum.photos/id/237/200/300" alt="" class="img-profile">
+                            <img v-bind:src="contacts[currentChat].avatar" alt="" class="img-profile">
                         </div>
                         <div class="col-lg-1 flex-grow-1 text-start">
-                            <p class="mb-0">Nome che cambierà</p>
-                            <p class="mb-0">messaggio che cambierà</p>
+                            <p class="mb-0">{{contacts[currentChat].name}}</p>
+                            <p class="mb-0 info_message">messaggio che cambierà</p>
                         </div>
                         <div class="col-lg-1">
                             <i class="fa-solid fa-magnifying-glass"></i>
@@ -103,15 +103,12 @@
                     </div>
                 </div>
                 <div class="container area_chat">
-                    <div class="d-flex flex-column">
-                        <div class="message-sent">
-                            Hai portato a spasso il cano ?
+                    <div class="d-flex flex-column" v-for="singMessage in contacts[currentChat].messages">
+                        <div v-if="singMessage.status.includes('sent')" class="message-sent">
+                            {{singMessage.message}}
                         </div>
-                        <div class="message-sent">
-                            ricorda di stendere i panni
-                        </div>
-                        <div class="message-received">
-                            Tutto fatto !
+                        <div v-else class="message-received">
+                            {{singMessage.message}}
                         </div>
                     </div>
                 </div>
