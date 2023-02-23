@@ -35,7 +35,6 @@ body{
 .window-contact,.window-chat{
     display: flex;
     flex-direction: column;
-    border: solid 1px #bbb9b9;
 }
 
 .list_contact,.area_chat{
@@ -45,7 +44,7 @@ body{
 }
 
 .profile_contact{
-    border-bottom: solid 1px #bbb9b9;
+    border: solid 1px #bbb9b9;
 }
 
 .alert_contact{
@@ -81,6 +80,10 @@ body{
 
 .alert_contact .row_pr{
     align-items: center;
+}
+
+.background_contact:hover{
+    background-color: #cfcdcd;
 }
 
 .info_message{
