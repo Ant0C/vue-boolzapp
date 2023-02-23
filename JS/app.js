@@ -167,12 +167,29 @@ const { createApp } = Vue
             }
             ],
         currentChat: 0,
+        inputmessage: ""
       }
     },
     methods: {
       setChat: function(currentChat){
         this.currentChat = currentChat
-      }
+      },
+      addMessage: function(){
+        window.addEventListener('keyup', (btn) => {
+          if (btn.key === 'Enter') {
+            let text = this.inputmessage
+            if(text === ""){
+              this.inputmessage= ""
+              return
+            }
+            this.contacts[this.currentChat].messages.push ({"message":text,"status":'sent'})
+            this.inputmessage= ""
+          }})
+          let v = this
+        setTimeout(function() {v.contacts[v.currentChat].messages.push (
+          {"message":'Ok!',"status":'received'}
+        )}, 2000);
+      },
     }
 
   }).mount('#app')
