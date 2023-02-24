@@ -60,6 +60,12 @@ body{
     background-color: #FAFAFA;
 }
 
+.search_bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .img-profile{
     border-radius: 50%;
     aspect-ratio: 1;
@@ -95,21 +101,32 @@ body{
 }
 
 .message-received{
+    position: relative;
     background: #fff;
     border-radius: 5px;
     max-width: 50%;
-    padding: 8px;
+    padding: 12px 8px;
     margin: 8px 100px;
     align-self: start;
 }
 
 .message-sent{
+    position: relative;
     background: #e1ffc7;
     border-radius: 5px;
     max-width: 50%;
-    padding: 8px;
+    padding: 12px 8px;
     margin: 8px 100px;
     align-self: end;
+}
+
+.time{
+    font-size: 10px;
+	color: #333;
+    position: absolute;
+	bottom: 0px;
+	right: 4px;
+	color: #979797
 }
 
 .msg{

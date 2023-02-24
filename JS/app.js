@@ -1,4 +1,5 @@
 const { createApp } = Vue
+const { DateTime } = luxon
 
   createApp({
     data() {
@@ -167,7 +168,8 @@ const { createApp } = Vue
             }
             ],
         currentChat: 0,
-        inputmessage: ""
+        inputmessage: "",
+        inputresearch: "",
       }
     },
     methods: {
@@ -186,10 +188,29 @@ const { createApp } = Vue
             this.inputmessage= ""
           }})
           let v = this
-        setTimeout(function() {v.contacts[v.currentChat].messages.push (
-          {"message":'Ok!',"status":'received'}
-        )}, 2000);
+          setTimeout(function() {v.contacts[v.currentChat].messages.push (
+            {"message":'Ok!',"status":'received'}
+          )}, 2000);
+      },
+
+      //Function non funzionanti da correggere
+      
+      setTime: function(){
+        let currentDate = this.contacts[this.currentChat].messages[this.currentChat].date
+        console.log(currentDate)
+        const parseDate = DateTime.fromFormat(currentDate, 'dd/LL/yyyy HH:mm:ss');
+        console.log(parseDate)
+        const time = parseDate.toFormat("HH:mm")
+        console.log(time)
+        return
+      },
+      search: function(){
+          let text = this.inputresearch
+          if(this.contacts.name.includes(text)){
+            console.log("persona presente")
+            return
+          }
+          console.log(text)
       },
     }
-
   }).mount('#app')
